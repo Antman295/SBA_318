@@ -11,8 +11,8 @@ let PORT = 3000;
 
 // Middleware
 
-// Route
-app.use('/players', footballPlayerRoutes);
+// Routes
+app.use('/players', footballPlayerRoutes); // Route for players data
 
 // Catch all route for incorrect inputs
 app.get('*', (req, res) => {
