@@ -66,9 +66,9 @@ router.get('/:player', (req, res, next) => {
 //@route: PATCH api/players/:player
 //@desc: Update specific player
 //@access: Public
-router.delete('/:player', (req, res, next) => {
+router.patch('/:player', (req, res, next) => {
     const player = players.find((p, i) => {
-        if (p.player = req.params.player) {
+        if (p.player == req.params.player) {
             for (const key in req.body) {
                 players[i][key] = req.body[key];
             }
@@ -86,7 +86,7 @@ router.delete('/:player', (req, res, next) => {
 //@access: Public
 router.delete('/:player', (req, res, next) => {
     const player = players.find((p, i) => {
-        if (p.player = req.params.player) {
+        if (p.player == req.params.player) {
             players.splice(i, 1);
             return true;
         }
