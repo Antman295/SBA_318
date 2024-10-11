@@ -2,6 +2,7 @@
 import express from "express";
 import footballPlayerRoutes from './routes/footballPlayerRoutes.mjs';
 import bodyParser from "body-parser";
+import error from './utilities/error.mjs'
 
 
 // Instance of express
@@ -21,13 +22,9 @@ app.use((err, req, res, next) => {
     res.json({ error: err.message });
 });
 
+
 app.use((req, res, next) => {
     next(error(404, "Data not found in database!"))
-})
-
-// Catch all route for incorrect inputs
-app.get('*', (req, res) => {
-    res.status(404).send('Invalid link!')
 })
 
 // Listen

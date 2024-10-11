@@ -1,5 +1,6 @@
 import express from "express";
-import { players } from "../data/footballPlayers.mjs"
+import { players } from "../data/footballPlayers.mjs";
+import error from '../utilities/error.mjs';
 
 let router = express.Router();
 
