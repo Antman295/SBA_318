@@ -17,9 +17,12 @@ app.use(bodyParser.json({extended: true}))
 // Routes
 app.use('/api/players', footballPlayerRoutes); // Route for players data
 
+// Error Handling
+
+
 // Catch all route for incorrect inputs
 app.get('*', (req, res) => {
-    res.status(404).send('Error: Page Not Found!')
+    res.status(404).send('Data not found in database!')
 })
 
 // Listen
