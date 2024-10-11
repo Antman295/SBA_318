@@ -1,6 +1,5 @@
 import express from 'express';
 import { restaurants } from '../data/restaurants.mjs';
-import error from '../utilities/error.mjs';
 
 let router = express.Router();
 
@@ -38,6 +37,8 @@ router.get('/:place', (req, res, next) => {
   
     let restaurant = restaurants.find((r) => r.place == req.params.place);
   
-    if (place) res.json({ place, links });
+    if (restaurant) res.json({ restaurant, links });
     else next();
   });
+
+  export default router;
