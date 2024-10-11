@@ -1,6 +1,7 @@
 // Import
 import express from "express";
 import footballPlayerRoutes from './routes/footballPlayerRoutes.mjs';
+import bodyParser from "body-parser";
 
 // Data import
 import { players } from './data/footballPlayers.mjs'
@@ -10,9 +11,11 @@ const app = express();
 let PORT = 3000;
 
 // Middleware
+app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.json({extended: true}))
 
 // Routes
-app.use('/players', footballPlayerRoutes); // Route for players data
+app.use('/api/players', footballPlayerRoutes); // Route for players data
 
 // Catch all route for incorrect inputs
 app.get('*', (req, res) => {
