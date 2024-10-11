@@ -1,5 +1,9 @@
 // Import
 import express from "express";
+import footballPlayerRoutes from './routes/footballPlayerRoutes.mjs';
+
+// Data import
+import { players } from './data/footballPlayers.mjs'
 
 // Instance of express
 const app = express();
@@ -8,9 +12,7 @@ let PORT = 3000;
 // Middleware
 
 // Route
-app.get('/', (req, res) => {
-    res.send('Server is running!');
-});
+app.use('/players', footballPlayerRoutes);
 
 // Catch all route for incorrect inputs
 app.get('*', (req, res) => {
