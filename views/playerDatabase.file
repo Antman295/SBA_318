@@ -1,4 +1,19 @@
+<!DOCTYPE html>
 <html>
-    <body>
-    
-    </body>
+    <head>
+        <title>NFL Players</title>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="/style.css" />
+    </head>
+
+  <body>
+    <div id="app">
+    <nav>
+    <a href='/api/players/new'>Add a NFL player to the database</a>
+    <a href='/api/players'>Show players that are currently in the database</a>
+    </nav>
+    <h1>All Players</h1>
+    <div>#content#</div>
+    </div>
+  </body>
+</html>
