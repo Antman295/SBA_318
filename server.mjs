@@ -42,7 +42,7 @@ app.engine('file', (filePath, options, callback) => {
                 .replaceAll('#name#', `${options.name}`)
                 .replace('#position#', `${options.position}`)
                 .replace('#team#', `${options.team}`)
-                .replace('#players#', options.player);
+                .replace('#player#', options.player);
 
             return callback(null, rendered);
         }

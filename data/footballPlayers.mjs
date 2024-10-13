@@ -12,7 +12,7 @@ export const players = [
       team: "Balitmore Ravens",
     },
     {
-      players: 3,
+      player: 3,
       name: "Deion Sanders",
       position: "Cornerback",
       team: "Atlanta Falcons",

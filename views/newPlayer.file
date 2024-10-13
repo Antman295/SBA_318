@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>#name#</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+
+  <body>
+  <nav>
+    <a href='/api/players/new'>Add a NFL player to the database</a>
+    <a href='/api/players'>Show players that are currently in the database</a>
+    </nav>
+    <div id="app">
+
+    <h1>Create A New Animal</h1>
+
+      <form action="/api/players" method="post"><br>
+      <input type='text' name='name' placeholder='Name...' /><br>
+      <input type='text' name='position' placeholder='Their position...'  /><br>
+      <input type='number' name='team' placeholder='Team they play for...'  /><br>
+      <input type='submit' />
+      </form>
+
+    </div>
+  </body>
+</html>
