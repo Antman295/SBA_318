@@ -1,1 +1,1 @@
-https://www.lipsum.com/
+[Lorem Ipsum generator for the reviews data] = https://www.lipsum.com/
