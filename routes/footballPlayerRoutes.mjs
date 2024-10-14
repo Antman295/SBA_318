@@ -8,16 +8,18 @@ let router = express.Router();
 // @desc:   Gets all players
 // @access: Public
 router.route('/').get((req, res) => {
-    const links = [
-        {
-            href: 'players/:player',
-            rel: ':player',
-            type: 'GET',
-        },
-    ];
 
-    res.json({ players, links });
-})
+    let options = {
+        allPlayers: players,
+    };
+    res.render('playerDatabase', options);
+});
+
+// New Player Form
+router.get('/new', (req, res) => {
+    res.render('newPlayer');
+});
+
 
 // @route: POST api/players
 // @desc: Adds new player to DB
@@ -37,30 +39,27 @@ router.post('/', (req, res, next) => {
         };
 
         players.push(player); // Push new player to DB
-        res.json(players[players.length - 1]);
+
+        res.render('playerInfo', newPlayer);
+
     } else next(error(400, "Something's wrong with your data")); // Send error to user
-})
+});
+
 
 // @route: GET api/players/:player
 // @desc: Gets one player
 // @access: Public
 router.get('/:player', (req, res, next) => {
-    const links = [
-        {
-            href: `/${req.params.player}`,
-            rel: '',
-            type: 'PATCH',
-        },
-        {
-            href: `/${req.params.player}`,
-            rel: '',
-            type: 'DELETE',
-        },
-    ];
-
     const player = players.find((p) => p.player == req.params.player);
+    
+    let options = {
+        player: player.player,
+        name: player.name,
+        position: player.position,
+        team: player.team,
+    };
 
-    if (player) res.json({ player, links });
+    if (player) res.render('playerInfo', options);
     else next();
 });
 
@@ -77,7 +76,7 @@ router.patch('/:player', (req, res, next) => {
         }
     });
 
-    if (player) res.json(player);
+    if (player) res.render('playerInfo', player);
     else next();
 })
 
@@ -93,7 +92,7 @@ router.delete('/:player', (req, res, next) => {
         }
     });
 
-    if (player) res.json(player);
+    if (player) res.render('playerInfo', player);
     else next();
 })
 

@@ -10,7 +10,7 @@ import fs from 'fs';
 
 // Instance of express
 const app = express();
-let PORT = 3000;
+let PORT = 3004;
 
 // Middleware
 
@@ -30,7 +30,7 @@ app.engine('file', (filePath, options, callback) => {
             let result = '';
 
             options.allPlayers.forEach((el) => {
-                result += `<h2>Name: ${el.name}<h2><h3>Species: ${el.species}</h3><h3>Age: ${el.age}</h3><a href="/api/animal/${el.id}"><button>More Info</button></a><br><br>`;
+                result += `<h2>Name: ${el.name}<h2><h3>Position: ${el.position}</h3><h3>Team: ${el.team}</h3><a href="/api/players/${el.player}"><button>More Info</button></a><br><br>`;
             });
 
             const rendered = content.toString().replace('#content#', result);
@@ -52,6 +52,8 @@ app.engine('file', (filePath, options, callback) => {
 
 app.set('views', './views'); // Specifies the views directory
 app.set('view engine', 'file'); // Registers the template engine
+
+
 // Routes
 app.use('/api/players', footballPlayerRoutes); // Route for players data
 app.use('/api/restaurants', restaurantRoutes); // Route for restaurant data
