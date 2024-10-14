@@ -8,8 +8,9 @@
 
   <body>
     <div id="app">
+    <img src="https://static.www.nfl.com/image/upload/v1554321393/league/nvfr7ogywskqrfaiu38m.svg" alt="NFL Logo" width="200" height="200">
     <nav>
-    <a href='/api/players/new'>Add a NFL player to the database</a>
+    <a href='/api/players/new'>Add a NFL player to the database</a><br>
     <a href='/api/players'>Show players that are currently in the database</a>
     </nav>
     <h1>All Players</h1>

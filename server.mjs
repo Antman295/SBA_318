@@ -10,7 +10,7 @@ import fs from 'fs';
 
 // Instance of express
 const app = express();
-let PORT = 3001;
+let PORT = 3000;
 
 // Middleware
 
