@@ -40,7 +40,7 @@ router.post('/', (req, res, next) => {
 
         players.push(player); // Push new player to DB
 
-        res.render('playerInfo', newPlayer);
+        res.render('playerInfo', player);
 
     } else next(error(400, "Something's wrong with your data")); // Send error to user
 });
